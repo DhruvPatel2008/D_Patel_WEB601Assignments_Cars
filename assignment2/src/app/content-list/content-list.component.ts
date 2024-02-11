@@ -1,19 +1,34 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../helper-files/content-interface';
+import { ContentCardComponent } from '../content-card/content-card.component';
+import { TypedeciderPipe } from '../type-decider.pipe';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, ContentCardComponent, TypedeciderPipe, FormsModule],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
 export class ContentListComponent implements OnInit {
-  displayContentInfo(contentItem: Content) {
+  DisplayContentInformation(contentItem: Content) {
     console.log(`ID: ${contentItem.id} and Title: ${contentItem.title}`);
     }
   @Input () contentItems: Content[] = [];
+
+  searchTitle: string = '';
+  contentExists: boolean = false;
+  message: string = '';  
+  selectedTitle: string | null = null;
+
+  checkContentExists() {
+    const foundItem = this.contentItems.find(item => item.title.toLowerCase() === this.searchTitle.toLowerCase());
+    this.contentExists = !!foundItem;
+    this.message = foundItem ? 'Content item exists.' : 'Content item does not exist.';
+    this.selectedTitle = foundItem ? foundItem.title : null;
+  }
 
   ngOnInit(): void {
     this.contentItems = [
@@ -70,7 +85,34 @@ export class ContentListComponent implements OnInit {
         description: "The Jeep Wrangler is an off-road SUV known for its ruggedness and adventure capabilities.",
         imgURL: "https://png.pngtree.com/png-vector/20200730/ourlarge/pngtree-classic-car-illustration-vector-flat-design-png-image_2316117.jpg",   
         tags: ["Luxury Car", "Racing"]
+      },{
+        id: 6,
+        creator: "Ferrari",
+        title: "LaFerrari",
+        year: 2021,
+        description: "The Ferrari LaFerrari is a limited-production hybrid sports car, known for its performance and advanced technology.",
+        imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
+        tags: ["Sports Car", "Hybrid"]
       },
+      {
+        id: 7,
+        creator: "Porsche",
+        title: "911",
+        year: 2023,
+        description: "The Porsche 911 is a classic sports car renowned for its iconic design and driving dynamics.",
+        imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
+        tags: ["Sports Car", "Luxury"]
+      },
+      {
+        id: 8,
+        creator: "Lamborghini",
+        title: "Aventador",
+        year: 2022,
+        description: "The Lamborghini Aventador is a high-performance supercar, recognized for its aggressive styling and powerful engine.",
+        imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
+        tags: ["Supercar", "sport"]
+      }
+      
     ];
   }
   

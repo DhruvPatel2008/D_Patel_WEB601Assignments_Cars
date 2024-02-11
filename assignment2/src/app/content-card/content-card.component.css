@@ -1,0 +1,14 @@
+.content-card {
+  border: 1px solid #999; 
+  padding: 20px; 
+  margin: 20px 10px; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  background-color: #f9f9f9; 
+  color: #333; 
+}
+
+.racing { background-color: #f00; color: #fff; }
+.sportscar { background-color: #00f; color: #fff; }
+.luxury { background-color: #0f0; color: #fff; }
+.unspecified { background-color: #ccc; color: #000; }
