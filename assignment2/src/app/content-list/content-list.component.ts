@@ -62,11 +62,12 @@ export class ContentListComponent implements OnInit {
       {
         id: 3,
         creator: "Tesla",
-        title: "title 3",
+        title: "tesla 3",
         year: 2022,
         description: "The Tesla title 3 is an electric sedan known for its advanced technology and performance.",
         imgURL: "https://static.vecteezy.com/system/resources/previews/015/697/010/non_2x/vintage-classic-car-retro-style-illustration-vector.jpg",   
-        tags: ["Track Racing", "Performance Car"] 
+        tags: ["Luxury Car", "Racing"]
+
       },
       {
         id: 4,
@@ -92,7 +93,7 @@ export class ContentListComponent implements OnInit {
         year: 2021,
         description: "The Ferrari LaFerrari is a limited-production hybrid sports car, known for its performance and advanced technology.",
         imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
-        tags: ["Sports Car", "Hybrid"]
+        tags: ["simple Car", "Hybrid"]
       },
       {
         id: 7,
@@ -101,7 +102,7 @@ export class ContentListComponent implements OnInit {
         year: 2023,
         description: "The Porsche 911 is a classic sports car renowned for its iconic design and driving dynamics.",
         imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
-        tags: ["Sports Car", "Luxury"]
+        tags: ["Racing", "Sportscar"]
       },
       {
         id: 8,
@@ -110,7 +111,7 @@ export class ContentListComponent implements OnInit {
         year: 2022,
         description: "The Lamborghini Aventador is a high-performance supercar, recognized for its aggressive styling and powerful engine.",
         imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
-        tags: ["Supercar", "sport"]
+        tags: ["Rally", "Racing"]   
       }
       
     ];

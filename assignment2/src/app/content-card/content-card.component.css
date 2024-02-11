@@ -8,7 +8,7 @@
   color: #333; 
 }
 
-.racing { background-color: #f00; color: #fff; }
-.sportscar { background-color: #00f; color: #fff; }
-.luxury { background-color: #0f0; color: #fff; }
+.racing { background-color: rgb(233, 113, 113); color: #fff; }
+.sportscar { background-color: rgb(98, 98, 214); color: #fff; }
+.luxury { background-color: rgb(112, 208, 112); color: #fff; }
 .unspecified { background-color: #ccc; color: #000; }
