@@ -1,18 +1,22 @@
-
-<div class="content-card" [ngClass]="{
+<div class="content-card" appHoverAffect [ngClass]="{
   'racing': contentItem.tags.includes('Racing'),
   'sportscar': contentItem.tags.includes('Sportscar'),
   'luxury': contentItem.tags.includes('Luxury Car'),
   'unspecified': !contentItem.tags || contentItem.tags.length === 0
 }">
 
+  <!-- Conditional Image Display -->
+  <ng-container *ngIf="contentItem.imgURL; else defaultImage">
+    <img [src]="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px" width="150px">
+  </ng-container>
+  <ng-template #defaultImage>
+    <img src="https://cimg1.ibsrv.net/cimg/www.dornob.com/750x421_85/849/Mercedes-Benz-VISION-AVTR-front-650849.jpg" alt="Default Image" height="200px" width="250px">
+  </ng-template>
 
-<img [src]="contentItem.imgURL" *ngIf="contentItem.imgURL" alt="{{ contentItem.title }}" class="content-card-image" height="200px" width="150px">
-<div *ngIf="contentItem.imgURL">
-    <h2>{{ contentItem.title }}</h2>
-    <p><strong>Description:</strong> {{ contentItem.description }}</p>
-    <p><strong>Maker:</strong> {{ contentItem.maker }}</p>
-    <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p>
-    <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
-</div>
+  <!-- Content (Displayed Regardless of Image Presence) -->
+  <h2>{{ contentItem.title }}</h2>
+  <p><strong>Description:</strong> {{ contentItem.description }}</p>
+  <p><strong>Maker:</strong> {{ contentItem.maker }}</p>
+  <p *ngIf="contentItem.type"><strong>Type: </strong>{{ contentItem.type }}</p>
+  <p *ngIf="contentItem.tags && contentItem.tags.length > 0"><strong>Tags:</strong> {{ contentItem.tags.join(', ') }}</p>
 </div>

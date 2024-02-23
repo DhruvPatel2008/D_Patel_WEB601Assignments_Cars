@@ -4,6 +4,7 @@ import { Content } from '../helper-files/content-interface';
 import { ContentCardComponent } from '../content-card/content-card.component';
 import { TypedeciderPipe } from '../type-decider.pipe';
 import { FormsModule } from '@angular/forms';
+import { HoverAffectDirective } from '../hover-affect.directive';
 
 @Component({
   selector: 'app-content-list',
@@ -112,7 +113,17 @@ export class ContentListComponent implements OnInit {
         description: "The Lamborghini Aventador is a high-performance supercar, recognized for its aggressive styling and powerful engine.",
         imgURL: "https://img.freepik.com/premium-vector/vintage-classic-car-illustration_232942-51.jpg",
         tags: ["Rally", "Racing"]   
+      },
+      {
+        id: 9,
+        creator: "alto",
+        title: "totyotas",
+        year: 2052,
+        description: "The alto  is a low-performance simplecar, recognized for its aggressive styling and powerful engine.",
+        imgURL: "",
+        tags: ["Rally", "Racing"]   
       }
+      
       
     ];
   }
