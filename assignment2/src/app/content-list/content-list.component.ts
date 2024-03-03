@@ -5,11 +5,11 @@ import { ContentCardComponent } from '../content-card/content-card.component';
 import { TypedeciderPipe } from '../type-decider.pipe';
 import { FormsModule } from '@angular/forms';
 import { HoverAffectDirective } from '../hover-affect.directive';
-
+import { CreateContentComponent } from '../create-content/create-content.component';
 @Component({
   selector: 'app-content-list',
   standalone: true,
-  imports: [CommonModule, ContentCardComponent, TypedeciderPipe, FormsModule],
+  imports: [CommonModule, ContentCardComponent, TypedeciderPipe, FormsModule,HoverAffectDirective, CreateContentComponent],
   templateUrl: './content-list.component.html',
   styleUrl: './content-list.component.scss'
 })
@@ -30,9 +30,8 @@ export class ContentListComponent implements OnInit {
     this.message = foundItem ? 'Content item exists.' : 'Content item does not exist.';
     this.selectedTitle = foundItem ? foundItem.title : null;
   }
-
   ngOnInit(): void {
-    this.contentItems = [
+    this.contentItems =[ 
       {
         id: 0,
          creator : "Toyota",
@@ -134,9 +133,9 @@ export class ContentListComponent implements OnInit {
         tags: ["Rally", "Racing"]   
       }
       
-      
     ];
   }
-  
- 
+  onContentCreated(newContent: any) {
+    this.contentItems.push({ ...newContent }); // Clone the content
+  }
 }
