@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ContentListComponent } from './content-list/content-list.component';
-
+import { MessagesComponent } from './messages/messages.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ContentListComponent],
+  imports: [RouterOutlet, ContentListComponent, MessagesComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'D_Patel_Cars';
