@@ -7,7 +7,7 @@ import { MessageService } from './message-service.service';
 @Injectable({
   providedIn: 'root'
 })
-export class GameService {
+export class carService {
 
   constructor(private messageService: MessageService) { }
   getContentObs():Observable<Content[]>{
